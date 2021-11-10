@@ -1,0 +1,29 @@
+{
+  "name": "apimeusite",
+  "version": "1.0.0",
+  "description": "mini api feita para o consumo no frontend do meu site pessoal",
+  "main": "App.ts",
+  "scripts": {
+    "build": "tsc",
+    "dev": "nodemon dist/Server.js",
+    "start": "npx tsc && node dist/Server.js"
+  },
+  "keywords": [
+    "miniapi",
+    "site-pessoal"
+  ],
+  "author": "Joao Victor Lacerda de Queiroz",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "mongoose": "^6.0.12",
+    "uuid": "^8.3.2"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.13",
+    "nodemon": "^2.0.14",
+    "typescript": "^4.4.4"
+  }
+}
