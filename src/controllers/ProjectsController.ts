@@ -1,4 +1,3 @@
-import { Projects } from "../models/Projects";
 import { ProjectsRepository } from "../repositories/ProjectsRepository";
 
 

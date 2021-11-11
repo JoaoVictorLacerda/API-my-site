@@ -2,6 +2,7 @@ import express from 'express';
 import cors from 'cors';
 import { SobreMimRoute } from './routes/SobreMimRoute';
 import { ProjectsRoute } from './routes/ProjectsRoute';
+import { ContactRoute } from './routes/ContactRoute';
 
 export class App{
     private app;
@@ -23,10 +24,12 @@ export class App{
 
     private configuraRouters():void{
         const routeSobreMim = new SobreMimRoute();
-        const routeProjects = new ProjectsRoute() ;
+        const routeProjects = new ProjectsRoute();
+        const routeContact = new ContactRoute();
     
         this.app.use('/sobre-mim',routeSobreMim.getRoute())
         this.app.use('/projects', routeProjects.getRoute())
+        this.app.use('/contact',  routeContact.getRoute())
 
     }
 
