@@ -1,6 +1,7 @@
 import { SobreMimRepository } from "../repositories/SobreMimRepository";
+import { SupertipoController } from "./SupertipoControllers";
 
-export class SobreMimController{
+export class SobreMimController implements SupertipoController{
 
 
 

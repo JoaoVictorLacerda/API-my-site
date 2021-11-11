@@ -1,8 +1,9 @@
 import { ProjectsRepository } from "../repositories/ProjectsRepository";
+import { SupertipoController } from "./SupertipoControllers";
 
 
 
-export class ProjectsController{
+export class ProjectsController implements SupertipoController{
 
 
     public async post(request,response){

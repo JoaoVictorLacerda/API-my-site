@@ -1,9 +1,11 @@
 import { ContactRepository } from "../repositories/ContactRepository";
+import { SupertipoController } from "./SupertipoControllers";
 
 
 
-export class ContactController{
+export class ContactController implements SupertipoController{
 
+    
 
     public async post(request,response){
 

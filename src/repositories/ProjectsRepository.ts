@@ -1,7 +1,8 @@
 import { Projects } from "../models/Projects";
+import { SupertipoRepository } from "./SupertipoRepository";
 
 const {v4: uuid} = require('uuid');
-export class ProjectsRepository{
+export class ProjectsRepository implements SupertipoRepository{
     private static instance: ProjectsRepository;
 
     public static getInstance(): ProjectsRepository {

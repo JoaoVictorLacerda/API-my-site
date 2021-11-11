@@ -1,7 +1,8 @@
 import { Contact } from "../models/Contact";
+import { SupertipoRepository } from "./SupertipoRepository";
 const {v4: uuid} = require('uuid');
 
-export class ContactRepository{
+export class ContactRepository implements SupertipoRepository{
     private static instance: ContactRepository;
 
     public static getInstance(): ContactRepository {

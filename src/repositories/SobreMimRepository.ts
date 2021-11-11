@@ -1,7 +1,8 @@
 import {SobreMim} from '../models/SobreMim'
+import { SupertipoRepository } from './SupertipoRepository';
 const {v4: uuid} = require('uuid');
 
-export class SobreMimRepository{
+export class SobreMimRepository implements SupertipoRepository{
 
     //padrão singleton
     private static instance: SobreMimRepository;
