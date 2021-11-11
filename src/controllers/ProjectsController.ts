@@ -6,7 +6,7 @@ import { SupertipoController } from "./SupertipoControllers";
 export class ProjectsController implements SupertipoController{
 
 
-    public async post(request,response){
+    public async post(request:any,response:any){
 
         const key = request.headers['key'];
 
@@ -28,7 +28,7 @@ export class ProjectsController implements SupertipoController{
 
     }
 
-    public async get(request,response){
+    public async get(request:any,response:any){
         const repository:ProjectsRepository = ProjectsRepository.getInstance();
         try {
             const result = await repository.read();

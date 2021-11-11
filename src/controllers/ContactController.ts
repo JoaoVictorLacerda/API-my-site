@@ -7,7 +7,7 @@ export class ContactController implements SupertipoController{
 
     
 
-    public async post(request,response){
+    public async post(request:any,response:any){
 
         const repository:ContactRepository = ContactRepository.getInstance();
         const result = await repository.create(request.body)
@@ -23,7 +23,7 @@ export class ContactController implements SupertipoController{
 
     }
 
-    public async get(request,response){
+    public async get(request:any,response:any){
         const key = request.headers['key'];
 
         if(key !== undefined && key !== null && key === process.env.KEY){

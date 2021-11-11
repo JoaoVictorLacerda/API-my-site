@@ -5,7 +5,7 @@ export class SobreMimController implements SupertipoController{
 
 
 
-    public async post(request,response){
+    public async post(request:any,response:any){
 
         const key = request.headers['key'];
 
@@ -26,7 +26,7 @@ export class SobreMimController implements SupertipoController{
 
     }
 
-    public async get(request,response){
+    public async get(request:any,response:any){
         const repository:SobreMimRepository = SobreMimRepository.getInstance();
         try {
             const result = await repository.read();
