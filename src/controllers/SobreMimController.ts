@@ -29,7 +29,6 @@ export class SobreMimController{
         const repository:SobreMimRepository = SobreMimRepository.getInstance();
         try {
             const result = await repository.read();
-            console.log(result)
             return response.status(201).json(result);    
         } catch (error) {
         

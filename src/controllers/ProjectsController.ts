@@ -1,7 +1,9 @@
+import { Projects } from "../models/Projects";
 import { ProjectsRepository } from "../repositories/ProjectsRepository";
 
-export class ProjectsController{
 
+
+export class ProjectsController{
 
 
     public async post(request,response){
@@ -9,6 +11,7 @@ export class ProjectsController{
         const key = request.headers['key'];
 
         if(key !== undefined && key !== null && key === process.env.KEY){
+
             const repository:ProjectsRepository = ProjectsRepository.getInstance();
             const result = await repository.create(request.body)
     
@@ -29,7 +32,6 @@ export class ProjectsController{
         const repository:ProjectsRepository = ProjectsRepository.getInstance();
         try {
             const result = await repository.read();
-            console.log(result)
             return response.status(201).json(result);    
         } catch (error) {
         

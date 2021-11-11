@@ -16,14 +16,14 @@ export class Projects{
                 type: String,
                 required: true,
             }],
-            about:{
+            about:[{
                 type:String,
                 required: true
-            },
-            linkProject:{
+            }],
+            linkProject:[{
                 type:String,
                 required: true
-            }
+            }]
             
         });
 

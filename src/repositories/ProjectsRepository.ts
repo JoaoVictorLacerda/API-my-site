@@ -24,7 +24,10 @@ export class ProjectsRepository{
     public async create(data: any):Promise<boolean>{
 
         const {name,imgs,about,linkProject} = data;
-        console.log(about)
+
+        if(!name || !imgs || !about ||!linkProject){
+            return false
+        }
 
 
         const newAbout = new this.mongoModel({

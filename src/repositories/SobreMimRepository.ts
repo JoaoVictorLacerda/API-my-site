@@ -29,7 +29,6 @@ export class SobreMimRepository{
     public async create(data: any):Promise<boolean>{
 
         const {about} = data;
-        console.log(about)
 
 
         const newAbout = new this.mongoModel({
