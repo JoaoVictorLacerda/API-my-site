@@ -1,4 +1,5 @@
 import { Contact } from "../models/Contact";
+import { EnvioDeEmailService } from "../Services/EnvioDeEmailService";
 import { SupertipoRepository } from "./SupertipoRepository";
 
 const {v4: uuid} = require('uuid');
@@ -40,7 +41,7 @@ export class ContactRepository implements SupertipoRepository{
         
         try{
             await newAbout.save();
-            await this.sendEmail(data);
+            await new EnvioDeEmailService(data);
             return true;
     
         }catch(err){
@@ -50,28 +51,7 @@ export class ContactRepository implements SupertipoRepository{
         
     }
 
-    private async sendEmail(message:any){
-        const nodemailer = require('nodemailer');
-        const transporter = nodemailer.createTransport({
-            host: "smtp.gmail.com",
-            port: 587,
-            secure: false,
-            auth: {
-              user: process.env.EMAIL,
-              pass: process.env.PASSWORD,
-            },
-            tls: {
-              rejectUnauthorized: false,
-            },
-          });
-
-        transporter.sendMail({
-            from:"Mensagem Meu Site <devictor002@gmail.com>",
-            to: "victorqueiroz90@outlook.com",
-            subject: "Olá, meu nome é: "+ message.nameOrEmail,
-            text: "Mensagem: "+message.message
-        });
-    }
+    
 
     public async read(){
         const about = await this.mongoModel.find();
